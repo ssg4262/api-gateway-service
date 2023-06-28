@@ -42,3 +42,8 @@ spring :
 #            - AddRequestHeader=first-request, first-request-header2
 #            - AddResponseHeader=first-response, first-response-header2
             - CustomFilter
+#      user-service  End
+        - id : catalog-service
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/CATALOG-service/**
