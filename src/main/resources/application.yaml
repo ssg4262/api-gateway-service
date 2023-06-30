@@ -43,7 +43,7 @@ spring :
 #            - AddResponseHeader=first-response, first-response-header2
             - CustomFilter
 #      user-service  End
-        - id : catalog-service
-          uri: lb://CATALOG-SERVICE
+        - id : catalog-service #유레카에 등록될 아이디값
+          uri: lb://CATALOG-SERVICE #유레카 등록된 키값
           predicates:
-            - Path=/catalog-service/**
+            - Path=/catalog-service/** #프론트에서 오는요청
