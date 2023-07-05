@@ -40,7 +40,7 @@ spring :
             - Path=/user-service/login
             - Method=POST
           filters:
-            - RemoveRequestHeader = Cookie
+            - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
         - id: user-service
           #          lb = Load Balancer
@@ -49,7 +49,7 @@ spring :
             - Path=/user-service/users
             - Method=POST
           filters:
-            - RemoveRequestHeader = Cookie
+            - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
         - id: user-service
           #          lb = Load Balancer
@@ -58,7 +58,7 @@ spring :
             - Path=/user-service/**
             - Method=GET
           filters:
-            - RemoveRequestHeader = Cookie
+            - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 #     RewritePath = URI 다시 작성 user-service 삭제됨
 #      user-service  End
