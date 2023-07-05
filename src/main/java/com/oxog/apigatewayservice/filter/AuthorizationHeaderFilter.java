@@ -19,6 +19,7 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<Auth
     Environment env;
 
     public AuthorizationHeaderFilter(Environment env){
+        super(Config.class);// 부모에 전달
         this.env = env;
     }
 
