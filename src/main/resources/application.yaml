@@ -47,3 +47,8 @@ spring :
           uri: lb://CATALOG-SERVICE #유레카 등록된 키값
           predicates:
             - Path=/catalog-service/** #프론트에서 오는요청
+#       catalog-service end
+        - id: order-service #유레카에 등록될 아이디값
+          uri: lb://ORDER-SERVICE #유레카 등록된 키값
+          predicates:
+            - Path=/order-service/** #프론트에서 오는요청
