@@ -18,7 +18,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     #???? ????
 
-
+token:
+  secret: user_token
 #  predicates : if ???
 
 spring :
@@ -60,6 +61,7 @@ spring :
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
 #     RewritePath = URI 다시 작성 user-service 삭제됨
 #      user-service  End
         - id : catalog-service #유레카에 등록될 아이디값
