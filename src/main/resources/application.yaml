@@ -78,3 +78,6 @@ spring :
           uri: lb://COMMUNITY-SERVICE #유레카 등록된 키값
           predicates:
             - Path=/community-service/** #프론트에서 오는요청
+          filters:
+            - RemoveRequestHeader=Cookie
+            - AuthorizationHeaderFilter
