@@ -62,6 +62,16 @@ spring :
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
+        - id: user-service
+          #          lb = Load Balancer
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/**
+            - Method=PATCH
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
 #     RewritePath = URI 다시 작성 user-service 삭제됨
 #      user-service  End
         - id : catalog-service #유레카에 등록될 아이디값
