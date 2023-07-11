@@ -27,12 +27,6 @@ spring :
     name : api-gateway-service
   cloud:
     gateway:
-      default-filters:
-        - name : GlobalFilter
-          args:
-            baseMessage: Spring Cloud GateWay Global Filter
-            preLogger: true
-            postLogger: true
       routes:
         - id: user-service
 #          lb = Load Balancer
